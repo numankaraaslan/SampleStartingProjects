@@ -1,0 +1,7 @@
+<div th:fragment="info">
+	<h5 sec:authorize="isAuthenticated()" th:text="'Your username is ' + ${#authentication.getPrincipal().getUsername()}"></h5>
+	<h5 sec:authorize="isAuthenticated()" th:text="'Your authority is ' + ${#authentication.getPrincipal().getAuthorities()}"></h5>
+	<div sec:authorize="isAuthenticated()">This content is only shown to authenticated users.</div>
+	<div sec:authorize="hasRole('ADMIN')">This content is only shown to administrators.</div>
+	<div sec:authorize="hasRole('USER')">This content is only shown to users.</div>
+</div>

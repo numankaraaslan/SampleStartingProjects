@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+<meta charset="ISO-8859-1">
+<title>Spring thymeleaf demo</title>
+</head>
+<body>
+	<a sec:authorize="isAuthenticated()" href="logout">logout</a>
+	<a sec:authorize="!isAuthenticated()" href="login">login</a>
+	<a>home</a>
+	<a href="addbook">add</a>
+	<div th:replace = "SecureInfo :: info">
+	</div>
+	<br />
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Year</th>
+				<th>Author</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="book : ${books}">
+				<td th:text="${book.name}"></td>
+				<td th:text="${book.year}"></td>
+				<td th:text="${book.author}"></td>
+				<td><a th:href="'bookdetail?id=' + ${book.id}">detail</a></td>
+				<td><a th:href="'deletebook?id=' + ${book.id}">delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
