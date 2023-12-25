@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Spring thymeleaf demo</title>
+</head>
+<body>
+	<a href="index">home</a>
+	<a>add</a>
+	<br />
+	<form method="post" th:action="@{addbook}">
+		<input id="name" name="name" placeholder="Book name" required type="text"/>
+	<br />
+		<input id="year" name="year" placeholder="Book year" required type="number"/>
+	<br />
+		<input id="author" name="author" placeholder="Book author" required type="text"/>
+	<br />
+		<input type="submit" value="Save book">
+	</form>
+</body>
+</html>
