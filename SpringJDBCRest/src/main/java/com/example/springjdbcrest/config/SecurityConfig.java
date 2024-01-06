@@ -70,8 +70,18 @@ public class SecurityConfig
 			{
 				// go to DB with username and bla bla and return it to security
 				// password is 1234 bcrypted
-				//				return User.withUsername("user").password("$2a$10$V2UuPZLY7Pzu6ihGbA0Yc.lCHmZ7KCr0Ahdm5IPcYkES/HO0bD1NO").authorities(new SimpleGrantedAuthority("ROLE_USER")).build();
-				return User.withUsername("admin").password("$2a$10$V2UuPZLY7Pzu6ihGbA0Yc.lCHmZ7KCr0Ahdm5IPcYkES/HO0bD1NO").authorities(new SimpleGrantedAuthority("ROLE_ADMIN")).build();
+				if (username.equals("admin"))
+				{
+					return User.withUsername("admin").password("$2a$10$V2UuPZLY7Pzu6ihGbA0Yc.lCHmZ7KCr0Ahdm5IPcYkES/HO0bD1NO").authorities("ROLE_ADMIN").build();
+				}
+				if (username.equals("user"))
+				{
+					return User.withUsername("user").password("$2a$10$V2UuPZLY7Pzu6ihGbA0Yc.lCHmZ7KCr0Ahdm5IPcYkES/HO0bD1NO").authorities("ROLE_USER").build();
+				}
+				else
+				{
+					throw new UsernameNotFoundException("Username must be 'admin' or 'user'");
+				}
 			}
 		});
 		return provider;
