@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+<meta charset="ISO-8859-1">
+<title>Spring thymeleaf demo</title>
+</head>
+<body>
+	<a sec:authorize="isAuthenticated()" href="logout">logout</a>
+	<a sec:authorize="!isAuthenticated()" href="systemlogin">login</a>
+	<a href="index">home</a>
+	<a>securedhome</a>
+	<br/>
+	<br/>
+	<label>This page is only visible to ADMIN roles</label>
+</body>
+</html>

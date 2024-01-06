@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Spring thymeleaf demo</title>
+</head>
+<body>
+	<a>login</a>
+	<a href="index">home</a>
+	<br />
+	<form th:action="@{/login}" method="post">
+		<div>
+			<p>
+				<input type="text" name="username" value="admin" placeholder="Username" required />
+			</p>
+			<p>
+				<input type="password" name="password" value="1234" placeholder="Password" required />
+			</p>
+			<p>
+				<input type="submit" value="Login" class="btn btn-primary" />
+			</p>
+		</div>
+	</form>
+	<br />
+	<form th:action="@{/login}" method="post">
+		<div>
+			<p>
+				<input type="text" name="username" value="user" placeholder="Username" required />
+			</p>
+			<p>
+				<input type="password" name="password" value="1234" placeholder="Password" required />
+			</p>
+			<p>
+				<input type="submit" value="Login" class="btn btn-primary" />
+			</p>
+		</div>
+	</form>
+</body>
+</html>

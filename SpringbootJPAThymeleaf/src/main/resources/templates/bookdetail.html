@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+<meta charset="ISO-8859-1">
+<title>Spring thymeleaf demo</title>
+</head>
+<body>
+	<a sec:authorize="isAuthenticated()" href="logout">logout</a>
+	<a sec:authorize="!isAuthenticated()" href="systemlogin">login</a>
+	<a href="index">home</a>
+	<a href="addbook">add</a>
+	<div>
+		<br />
+		<label th:text="${book.name}"></label>
+		<br />
+		<label th:text="${book.year}"></label>
+		<br />
+		<label th:text="${book.author}"></label>
+	</div>
+</body>
+</html>
