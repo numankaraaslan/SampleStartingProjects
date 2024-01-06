@@ -50,7 +50,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		{
 			System.err.println(e.getMessage());
 		}
-		// userservice is invoked here
+		// userservice from beanfactory is invoked here
 		return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(creds.getUsername(), creds.getPassword()));
 	}
 
