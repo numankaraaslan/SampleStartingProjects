@@ -12,7 +12,6 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Profile(value = "test")
 @Configuration
-@EnableMethodSecurity(securedEnabled = false, prePostEnabled = false, jsr250Enabled = false)
 public class SecurityConfigTest
 {
 	@Bean
