@@ -20,6 +20,7 @@ public class SecurityConfigProd
 	{
 		http.csrf(customizer -> customizer.disable());
 		http.sessionManagement(customizer -> customizer.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+		http.httpBasic(); // değiştirilmesi gerekir
 		return http.build();
 	}
 }
