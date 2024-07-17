@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.bilgeadam.SpringbootJPARest.controller.BookController;
 
-@RestController
 @RestControllerAdvice(basePackageClasses = BookController.class)
 public class BookExceptionHandler
 {
