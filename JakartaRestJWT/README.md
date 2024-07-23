@@ -1,6 +1,6 @@
 # Jakarta, REST, Security
 
-An up-to-date sample project using JakartaEE, EJB, Restful, JWT services with the latest Jakarta packages
+An up-to-date sample project using JakartaEE, EJB, Restful, JWT services with the latest Jakarta packages. Runs on payara.
 
 For login:
 
