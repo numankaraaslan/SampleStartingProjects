@@ -6,7 +6,7 @@ import java.util.Set;
 
 import jakarta.security.enterprise.credential.Credential;
 
-public class SystemUser implements Principal, Credential
+public class SystemUser implements Principal
 {
 	private String username;
 	private String password;
