@@ -2,6 +2,8 @@
 
 An up-to-date sample project using JakartaEE, EJB, JPA, Restful, JWT services with the latest Jakarta packages. Runs on payara.
 
+The schema name is JakartaEE. Create it in your postgresql database.
+
 For login:
 
 [localhost:8080/JakartaJPARestJWT/user/login](localhost:8080/JakartaJPARestJWT/user/login)
