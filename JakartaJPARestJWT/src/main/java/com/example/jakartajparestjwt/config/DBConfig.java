@@ -3,10 +3,6 @@ package com.example.jakartajparestjwt.config;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.sql.DataSource;
-
 import com.zaxxer.hikari.HikariDataSource;
 
 import jakarta.annotation.PostConstruct;
@@ -38,7 +34,7 @@ public class DBConfig
 		properties.put("jakarta.persistence.jdbc.url", "jdbc:postgresql://localhost:5432/EJB");
 		properties.put("jakarta.persistence.jdbc.user", "postgres");
 		properties.put("jakarta.persistence.jdbc.password", "123456789");
-		properties.put("jakarta.persistence.schema-generation.database.action", "create");
+		properties.put("hibernate.hbm2ddl.auto", "create");
 		properties.put("hibernate.default_schema", "\"JakartaEE\"");
 		properties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
 		properties.put("hibernate.show_sql", "true");
