@@ -28,22 +28,10 @@ public class DBConfig
 	@PostConstruct
 	public void init()
 	{
-		try
-		{
-			// Configure your DataSource or any other settings
-			InitialContext ctx = new InitialContext();
-			HikariDataSource dataSource = new HikariDataSource();
-			dataSource.setJdbcUrl("jdbc:postgresql://localhost:5432/EJB");
-			dataSource.setUsername("postgres");
-			dataSource.setPassword("123456789");
-			entityManagerFactory = Persistence.createEntityManagerFactory("myPersistenceUnit", getJpaProperties(dataSource));
-		}
-		catch (NamingException e)
-		{
-		}
+		entityManagerFactory = Persistence.createEntityManagerFactory("myPersistenceUnit", getJpaProperties());
 	}
 
-	private Map<String, Object> getJpaProperties(DataSource dataSource)
+	private Map<String, Object> getJpaProperties()
 	{
 		Map<String, Object> properties = new HashMap<>();
 		properties.put("jakarta.persistence.jdbc.driver", "org.postgresql.Driver");

@@ -61,6 +61,7 @@ public class BookController
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response save(Book book)
 	{
+		// localhost:8080/JakartaJPARestJWT/book/save
 		book = bookRepository.save(book);
 		return Response.created(URI.create("localhost:8080/JakartaJPARestJWT/book/" + book.getId())).entity("Created").build();
 	}
