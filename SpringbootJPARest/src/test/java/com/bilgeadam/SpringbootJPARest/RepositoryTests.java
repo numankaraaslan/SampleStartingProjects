@@ -11,7 +11,6 @@ import com.bilgeadam.SpringbootJPARest.model.Book;
 import com.bilgeadam.SpringbootJPARest.repo.BookRepo;
 
 @DataJpaTest
-@Import(BookRepo.class)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class RepositoryTests
 {
